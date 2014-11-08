@@ -12,8 +12,6 @@
         $body.html('');
         // Come back to.  If I add something inside the parentheses, it is displayed at the top of the content, while the new tweet block is below.  Perhaps a way to keep old tweets.  Maybe create a variable that stores all old tweets?
 
-        console.log(streams.home);
-
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
@@ -22,12 +20,18 @@
           $tweet.appendTo($body);
           index -= 1;
         }
-        // Immediately displays the 11 already generated tweets in the html body
+        // Immediately displays the 11 already generated tweets in the html body.  Need to edit this code to loop for new tweets;
 
-        // Need to create an endless loop which pulls in each new randomly generated tweet
-
-        var tweetCount = $('div').length;
+        var displayedTweets = $('div').length;
         // Counts the number of tweets already displayed
+
+        setTimeout(function(){
+          var newTweets = streams.home.length - displayedTweets;
+          for(i = displayedTweets - 1; i < streams.home.length; i++){
+            console.log('hi');
+          }
+        }, 5000);
+        // some test code to see if we can access new tweets
 
       });
 
