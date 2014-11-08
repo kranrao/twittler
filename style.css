@@ -1,0 +1,11 @@
+body {
+  background-color: grey;
+}
+
+div {
+  border-style: solid;
+  border-color: blue;
+  background-color: white;
+  padding: 5px;
+  margin: 10px 250px;
+}
