@@ -10,7 +10,7 @@
       $(document).ready(function(){
         var $body = $('body');
         $body.html('');
-        // Come back to.  If I add something inside the parentheses, it is displayed at the top of the content, while the new tweet block is below.  Perhaps a way to keep old tweets.  Maybe create a variable that stores all old tweets?
+        // What is the purpose of this?
 
         var displayTweets = function(){
           var displayedTweetCount = $('div').length - 1;
@@ -21,7 +21,7 @@
             // initially 10 > -1
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $tweet.text('@' + tweet.user + ': ' + tweet.message + ' ' + tweet.created_at);
             $tweet.appendTo($body);
             index -= 1;
           }
@@ -29,7 +29,7 @@
             displayTweets();
           }, 1);
           // Reruns to search for new tweets
-          // Why does an error occur when interval in 0 (instantaneous)?
+          // Why does an error occur when interval is 0 (instantaneous)?
         }
         displayTweets();
         // Begins displayTweets loop
