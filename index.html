@@ -3,6 +3,7 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <script>
@@ -25,11 +26,12 @@
             $tweet.appendTo($body);
             index -= 1;
           }
-          setTimeout(function(){
+          /*setTimeout(function(){
             displayTweets();
-          }, 1);
+          }, 1);*/
           // Reruns to search for new tweets
           // Why does an error occur when interval is 0 (instantaneous)?
+          // Paused for now: save memory
         }
         displayTweets();
         // Begins displayTweets loop
