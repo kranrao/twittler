@@ -1,43 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <script src="jquery.js"></script>
-    <script src="data_generator.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Twittler</title>
+
+    <!-- Bootstrap -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <!-- CSS code -->
+    <link rel"style.css" rel="stylesheet">
+
   </head>
   <body>
-    <script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
-        // What is the purpose of this?
-
-        var displayTweets = function(){
-          var displayedTweetCount = $('div').length - 1;
-          // Counts the number of tweets already displayed - 1 to normalize with the index variable
-          var index = streams.home.length - 1;
-          // Counts the index of the variable holding the number of tweets generated
-          while(index > displayedTweetCount){
-            // initially 10 > -1
-            var tweet = streams.home[index];
-            var $tweet = $('<div></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message + ' ' + tweet.created_at);
-            $tweet.appendTo($body);
-            index -= 1;
-          }
-          setTimeout(function(){
-            displayTweets();
-          }, 1);
-          // Reruns to search for new tweets
-          // Why does an error occur when interval is 0 (instantaneous)?
-          // Paused for now: save memory
-        }
-        displayTweets();
-        // Begins displayTweets loop
-
-      });
-
-    </script>
+    <!-- JavaScript code -->
+    <script src="app.js"></script>
+    <script src="data_generator.js"></script>
   </body>
 </html>
