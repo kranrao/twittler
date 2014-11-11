@@ -8,3 +8,34 @@
   max-width: 30%; 
 
 }
+
+/* Jumbotron (change to status) */
+
+.jumbotron .container {
+  background-color: blue;
+  /* temp color */
+}
+
+.profile {
+}
+
+.status-group {
+  width: 85%;
+  /* Need to fix how profile and status-group interact */
+}
+
+.jumbotron textarea {
+  resize: none;
+}
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.counter {
+  display: inline;
+  vertical-align: middle;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
