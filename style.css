@@ -1,12 +1,10 @@
 /* General */
 
 
-/* Header */
+/* Navbar */
 
 .navbar-brand > img {
   max-height: 75px;
   max-width: 30%; 
+
 }
-
-
-/* Menu */

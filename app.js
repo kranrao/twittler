@@ -1,7 +1,23 @@
 $(document).ready(function(){
   var $body = $('body');
-  $body.html('');
+  $body.html();
   // What is the purpose of this?
+
+/* Navbar */
+
+  /* Navbar dropdown */
+
+  $('.dropdown-toggle').mouseover(function(){
+    $('.dropdown-menu').show();
+  });
+
+  $('.dropdown-menu').mouseleave(function(){
+    $(this).hide();
+  });
+
+  /* Placeholder for code to make dropdown-menu hide if anywhere on the screen is clicked */
+
+/* Content */
 
   var displayTweets = function(){
     var displayedTweetCount = $('div').length - 1;
