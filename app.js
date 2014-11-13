@@ -27,9 +27,12 @@ $(document).ready(function(){
     var index = streams.home.length - 1;
     while(index > displayedTweetCount){
       var tweet = streams.home[index];
+
+      // Uses moment.js library to format timestamp
+      var formattedTime = moment(tweet.created_at).fromNow();
       
-      /* Creates new tweet */
-      $("<div class='container tweet'><div class='row'><div class='tweet-profile col-xs-4 col-md-2'><img src='./img/" + tweet.user + ".jpg'><span>@" + tweet.user + "</span></div><div class='tweet-update-group col-xs-8 col-md-10'><div class='tweet-content'>" + tweet.message + "</div><div class='timestamp'><em>" + tweet.created_at + "</em></div></div></div></div>").prependTo($feed);
+      // Creates new tweet
+      $("<div class='container tweet'><div class='row'><div class='tweet-profile col-xs-4 col-md-2'><img src='./img/" + tweet.user + ".jpg'><span>@" + tweet.user + "</span></div><div class='tweet-update-group col-xs-8 col-md-10'><div class='tweet-content'>" + tweet.message + "</div><div class='timestamp'><em>" + formattedTime + "</em></div></div></div></div>").prependTo($feed);
 
       index -= 1;
     }
