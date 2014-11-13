@@ -27,12 +27,36 @@ $(document).ready(function(){
 
 /* Content */
 
-  
+  // Visitor submitted tweets enter the display and status-box related items are cleared 
   $('.update-btn').click(function(){
+    // Message in status-box captured and sent
     var visitorPost = $('.status-box').val();
     writeTweet(visitorPost);
+
+    // Resets status-box, counter, and update-btn
+    $('.status-box').val('');
+    $('.counter').text('140');
+    $('.update-btn').addClass('disabled');
   });
 
+  // Updates counter based on what visitor types in status-box
+  // User only able to submit if characters are between 1 and 141 
+  $('.status-box').keyup(function(event){
+    var postLength = $(this).val().length;
+    var charactersLeft = 140 - postLength;
+    $('.counter').text(charactersLeft);
+
+    if(charactersLeft < 0){
+      $('.update-btn').addClass('disabled');
+    } else if(charactersLeft === 140){
+      $('.update-btn').addClass('disabled');
+    } else{
+      $('.update-btn').removeClass('disabled');
+    }
+  });
+  $('.update-btn').addClass('disabled');
+
+  // Checks for and displays any new user tweets
   var displayTweets = function(){
     var displayedTweetCount = $('.tweet').length - 1;
     var index = streams.home.length - 1;
