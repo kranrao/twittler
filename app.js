@@ -1,7 +1,6 @@
 $(document).ready(function(){
   var $body = $('body');
-  $body.html();
-  // What is the purpose of this?
+  var $feed = $('.feed');
 
 /* Navbar */
 
@@ -17,27 +16,27 @@ $(document).ready(function(){
 
   /* Placeholder for code to make dropdown-menu hide if anywhere on the screen is clicked */
 
+  /* Navbar collapsed */
+
+  /* Placeholder for code to make collapsed navbar show when clicked */
+
 /* Content */
 
   var displayTweets = function(){
-    var displayedTweetCount = $('div').length - 1;
-    // Counts the number of tweets already displayed - 1 to normalize with the index variable
+    var displayedTweetCount = $('.tweet').length - 1;
     var index = streams.home.length - 1;
-    // Counts the index of the variable holding the number of tweets generated
     while(index > displayedTweetCount){
-      // initially 10 > -1
       var tweet = streams.home[index];
-      var $tweet = $('<div></div>');
+      var $tweet = $("<div class='tweet'></div>");
       $tweet.text('@' + tweet.user + ': ' + tweet.message + ' ' + tweet.created_at);
-      $tweet.appendTo($body);
+      $tweet.prependTo($feed);
       index -= 1;
     }
     setTimeout(function(){
       displayTweets();
-    }, 1);
+    }, 1000); 
     // Reruns to search for new tweets
     // Why does an error occur when interval is 0 (instantaneous)?
-    // Paused for now: save memory
   }
   displayTweets();
   // Begins displayTweets loop

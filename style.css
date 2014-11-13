@@ -70,3 +70,9 @@
   vertical-align: middle;
   margin-right: 10px;
 }
+
+/* Posts */
+
+.posts {
+  background-color: red;
+}
