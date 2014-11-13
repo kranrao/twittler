@@ -1,3 +1,8 @@
+/* General */
+
+// Global visitor variable set
+var visitor = 'kranrao';
+
 $(document).ready(function(){
   var $body = $('body');
   var $feed = $('.feed');
@@ -22,6 +27,12 @@ $(document).ready(function(){
 
 /* Content */
 
+  
+  $('.update-btn').click(function(){
+    var visitorPost = $('.status-box').val();
+    writeTweet(visitorPost);
+  });
+
   var displayTweets = function(){
     var displayedTweetCount = $('.tweet').length - 1;
     var index = streams.home.length - 1;
@@ -29,6 +40,7 @@ $(document).ready(function(){
       var tweet = streams.home[index];
 
       // Uses moment.js library to format timestamp
+      // Does the new timestamp update? i.e. seconds ago -> minutes ago -> etc.
       var formattedTime = moment(tweet.created_at).fromNow();
       
       // Creates new tweet
