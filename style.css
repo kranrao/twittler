@@ -1,5 +1,9 @@
 /* General */
 
+/*.container {
+  width: 960px;
+} see if this breaks responsive design*/
+
 
 /* Navbar */
 
@@ -9,33 +13,60 @@
 
 }
 
-/* Jumbotron (change to status) */
+/* Status */
 
-.jumbotron .container {
-  background-color: blue;
-  /* temp color */
+.status .container {
+  height: 179px;
+  border: 2px solid #55ACEE;
 }
 
-.profile {
+.profile-group {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #55ACEE;
 }
 
-.status-group {
-  width: 85%;
-  /* Need to fix how profile and status-group interact */
+.profile-img {
+  margin-bottom: 5px;
+  text-align: center;
 }
 
-.jumbotron textarea {
+.profile-img img {
+  max-height: 100px;
+  max-width: 100%;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-info ul {
+  height: 40px;
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+.profile-info li {
+  list-style-type: none;
+}
+
+.update-group {
+  padding-top: 15px;
+  padding-bottom: 14px;
+  background-color: white;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.status textarea {
   resize: none;
-}
-
-.button-group {
-  margin-bottom: 20px;
+  height: 100px;
 }
 
 .counter {
   display: inline;
   vertical-align: middle;
-  margin-top: 0px;
-  margin-bottom: 0px;
   margin-right: 10px;
 }
