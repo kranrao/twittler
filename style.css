@@ -60,95 +60,74 @@ body {
   padding: 6px 20px;
 }
 
-/* Status */
+/* Profile */
 
-.status .container {
-  height: 179px;
-  background-color: pink;
+.user-profile {
+  background-color: #E5F2F7;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 60px;
+  padding: 10px;
 }
 
-.profile-group {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background-color: #292F33;
+.user-profile img {
+  float: left;
+  border-radius: 5px;
+  max-height: 40px;
+  margin-right: 10px;
 }
 
-.profile-img {
-  margin-bottom: 5px;
-  text-align: center;
-}
-
-.profile-img img {
-  max-height: 100px;
-  max-width: 100%;
-}
-
-.profile-info {
-  text-align: center;
-  color: #55ACEE;
-}
-
-.profile-info ul {
-  height: 40px;
-  padding: 0px;
-  margin-bottom: 0px;
-}
-
-.profile-info li {
-  list-style-type: none;
-}
-
-.update-group {
-  padding-top: 15px;
-  padding-bottom: 14px;
-  background-color: white;
-}
-
-.form-group {
-  margin-bottom: 12px;
-}
-
-.status textarea {
+.user-profile textarea {
+  float: left;
   resize: none;
-  height: 100px;
+  height: 40px;
+  width: 768px;
+  margin-right: 10px;
 }
 
 .counter {
-  display: inline;
-  vertical-align: middle;
+  float: left;
+  color: #66757F;
+  margin-top: 10px;
   margin-right: 10px;
+}
+
+.update-btn {
+  margin-top: 2.5px;
 }
 
 /* Feed */
 
-.feed .container {
-  height: 80px;
-  background-color: #CCD6DD;
-  border-top: none;
+.tweet {
+  background-color: #FFFFFF;
+  height: 100px;
+  padding: 10px;
+  border-bottom: 1px solid #E1E8ED;
+  border-top: 1px solid #E1E8ED; 
 }
 
-.tweet-profile {
-  height: 78px;
-  padding: 9px;
-  background-color: #292F33;
+.tweet:hover {
+  background-color: #E1E8ED;
 }
 
-.tweet-profile img {
-  max-height: 60px;
-  max-width: 100%;
+.tweet img {
+  float: left;
+  border-radius: 5px;
+  max-height: 80px;
+  margin-right: 10px;
 }
 
-.tweet-profile span {
-  margin-left: 6px;
-  color: #55ACEE;
+.tweet .username {
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.tweet-content {
-  height: 60px;
+.tweet .time {
+  color: #66757F;
 }
 
-.timestamp {
-  height: 18px;
-  font-size: 12px;
-  color: #292F33;
+.tweet .message {
+  font-size: 18px;
 }
+
+
