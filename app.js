@@ -15,7 +15,7 @@ $(document).ready(function(){
 
   // Placeholder for code to make dropdown-menu hide if anywhere on the screen is clicked
 
-  //Navbar collapsed//
+  //Navbar collapsed
   //Placeholder for code to make collapsed navbar show when clicked
 
 //Content
@@ -49,6 +49,9 @@ $(document).ready(function(){
   });
   $('.update-btn').addClass('disabled');
 
+  // Allows visitor to click on a username to see that users timeline
+  // Placeholder
+
   // Checks for and displays any new user tweets
   var displayTweets = function(){
     var displayedTweetCount = $('.tweet').length - 1;
@@ -61,14 +64,14 @@ $(document).ready(function(){
       var formattedTime = moment(tweet.created_at).fromNow();
       
       // Creates new tweet
-      $("<div class='container tweet'><div class='row'><div class='tweet-profile col-xs-4 col-md-2'><img src='./img/" + tweet.user + ".jpg'><span>@" + tweet.user + "</span></div><div class='tweet-update-group col-xs-8 col-md-10'><div class='tweet-content'>" + tweet.message + "</div><div class='timestamp'><em>" + formattedTime + "</em></div></div></div></div>").prependTo($('.feed'));
+      $("<div class='container'><div class='tweet'><img src='./img/" + tweet.user + ".jpg'><a class='username' href='#''>@" +  tweet.user + "</a><span class='time'>&#183" + formattedTime + "</span><br><span class='message'>" + tweet.message + "</span></div></div>").prependTo($('.feed'));
 
       index -= 1;
     }
     // Reruns every 1000 miliseconds to search for new tweets
     setTimeout(function(){
       displayTweets();
-    }, 1000);
+    }, 1000)
   }
   displayTweets();
 });
