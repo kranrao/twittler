@@ -1,23 +1,70 @@
 /* General */
 
-/*.container {
+body {
+  background-color: #C0DEED;
+  font-family: 'Gotham';
+}
+
+.container {
   width: 960px;
-} see if this breaks responsive design*/
+}
 
+/* Header */
 
-/* Navbar */
+.header {
+  background-color: #F5F8FA;
+  border-bottom: 1px solid #E1E8ED;
 
-.navbar-brand > img {
-  max-height: 75px;
-  max-width: 30%; 
+  font-size: 18px;
 
+  padding: 15px;
+}
+
+.logo-icon img {
+  max-height: 25px;
+  max-width: 30%;
+}
+
+/* Menu */ 
+
+.header .menu {
+  float: right;
+  list-style: none;
+  margin-top: 5px;
+}
+
+.menu > li {
+  display: inline;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.menu span {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.menu a {
+  color: #66757F;
+}
+
+/* Dropdown */
+
+.dropdown-menu {
+  margin-top: 5px;
+  min-width: 105px;
+}
+
+.dropdown-menu li a {
+  color: #66757F;
+  padding: 6px 20px;
 }
 
 /* Status */
 
 .status .container {
   height: 179px;
-  border: 2px solid #55ACEE;
+  background-color: pink;
 }
 
 .profile-group {
@@ -77,7 +124,6 @@
 .feed .container {
   height: 80px;
   background-color: #CCD6DD;
-  border: 2px solid #55ACEE;
   border-top: none;
 }
 

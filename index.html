@@ -19,45 +19,29 @@
   </head>
   <body>
     <!-- Augmented bootstrap responsive navbar -->
-    <div class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#" >
-            <img alt="Brand" src="./img/Twitter_logo_blue.png">
-          </a>
-        </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav pull-right">
-            <!-- Placeholder for private message navbar item -->
-            <li><a href="#"><span class="glyphicon glyphicon-inbox"></span></a></li>
-            <!-- Placeholder for alerts navbar item -->
-            <li><a href="#"><span class="glyphicon glyphicon-flag"></span></a></li>
-            <!-- Placeholder for friend request navbar item -->
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span></a>
-              <ul class="dropdown-menu pull-right" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+    <div class="header">
+      <div class="container">
+        <a href="#" class="logo-icon">
+          <img src="./img/Twitter_logo_blue.png">
+        </a>
 
+        <ul class="menu">
+          <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span>Notifications</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Messages</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Discover <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Our Blog</a></li>
+              <li><a href="#">Advertisers</a></li>
+              <li><a href="#">About Us</a></li>
+            </ul>
+          </li>
+        </ul>
       </div><!-- /.container -->
-    </div><!-- /.navbar -->
+    </div><!-- /.header -->
 
     <div class="status">
       <div class="container">
@@ -87,6 +71,18 @@
     </div><!-- /.status -->
 
     <div class="feed">
+      <div class="container tweet">
+        <div class="row">
+          <div class="tweet-profile col-xs-4 col-md-2">
+            <img src="./img/kranrao.jpg">
+            <span>@kranrao<span>
+          </div>
+          <div class="tweet-update-group col-xs-8 col-md-10">
+            <div class="tweet-content">CRUUUUSSSSHHH!</div>
+            <div class="timestamp"><em>a few seconds ago</em></div>
+          </div>
+        </div>
+      </div>
     </div><!-- /.feed -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
