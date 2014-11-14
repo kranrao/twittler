@@ -103,7 +103,7 @@ body {
   height: 100px;
   padding: 10px;
   border-bottom: 1px solid #E1E8ED;
-  border-top: 1px solid #E1E8ED; 
+  border-top: 1px solid #E1E8ED;
 }
 
 .tweet:hover {
@@ -129,5 +129,3 @@ body {
 .tweet .message {
   font-size: 18px;
 }
-
-
