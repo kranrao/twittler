@@ -15,9 +15,6 @@ $(document).ready(function(){
 
   // Placeholder for code to make dropdown-menu hide if anywhere on the screen is clicked
 
-  // Navbar collapsed
-  // Placeholder for code to make collapsed navbar show when clicked
-
 // Content
 
   // Visitor submitted tweets enter the display and status-box related items are cleared 
@@ -53,7 +50,22 @@ $(document).ready(function(){
   var userFilter = false;
   $('.feed').on('click', '.tweet', function(event){
     userFilter = $(this).children('a').text().slice(1);
+    
+    // Runs checkFilter
+    checkFilter();
+    
+    // Hides user profile
+    $('.user-profile').fadeOut('slow');
+    
+    // Adds go back button
+    $("<div><a class='btn btn-primary back-btn' href='#''>Go back</a></div>").prependTo($('.profile'));
+    // Makes sure only one button is added
+    if($('.back-btn').length > 1){
+      $('.back-btn').first().remove();
+      $('.back-btn').fadeIn('slow');
+    }
   });
+
   // If a filter has been set, filter for those tweets
   var checkFilter = function(){
     if(userFilter){
@@ -61,6 +73,14 @@ $(document).ready(function(){
       $('.' + userFilter).show();
     }
   };
+
+  // Go back button returns to unfiltered user profile
+  $('.profile').on('click', '.back-btn', function(event){
+    $(this).fadeOut('slow');
+    $('.user-profile').fadeIn('slow');
+    userFilter = false;
+    $('.tweet').show();
+  });
 
   // Checks for and displays any new user tweets.  Display will be influenced by whether or not a filter has been set
   var displayTweets = function(){
@@ -78,12 +98,12 @@ $(document).ready(function(){
 
       index -= 1;
     }
-    // Reruns every 1000 miliseconds to search for new tweets
+    // Reruns every 5000 miliseconds to search for new tweets
     setTimeout(function(){
       displayTweets()
-      // Checks if a filter has been set
+      // Applies filter each rerun
       checkFilter();
-    }, 1000)
+    }, 5000)
   }
   displayTweets();
 });
