@@ -15,10 +15,10 @@ $(document).ready(function(){
 
   // Placeholder for code to make dropdown-menu hide if anywhere on the screen is clicked
 
-  //Navbar collapsed
-  //Placeholder for code to make collapsed navbar show when clicked
+  // Navbar collapsed
+  // Placeholder for code to make collapsed navbar show when clicked
 
-//Content
+// Content
 
   // Visitor submitted tweets enter the display and status-box related items are cleared 
   $('.update-btn').click(function(){
@@ -49,16 +49,20 @@ $(document).ready(function(){
   });
   $('.update-btn').addClass('disabled');
 
-  // Allows visitor to click on a username to see that users timeline (once username is clicked, filter all divs with that username)
-  // Since code in the 'feed' class is added after the page has loaded, need to bind the new code using on()
-  // Review direct and delegated events
-  $(document).on('click', '.username', function(){
-    var filterName = $(this).text().slice(1);
-    $(this).closest('.feed').hide();
-    //need to put a filter on feed that only shows tweets with a class of filterName
+  // Allows visitor to click on a user tweet to see that user's timeline
+  var userFilter = false;
+  $('.feed').on('click', '.tweet', function(event){
+    userFilter = $(this).children('a').text().slice(1);
   });
+  // If a filter has been set, filter for those tweets
+  var checkFilter = function(){
+    if(userFilter){
+      $('.tweet').hide();
+      $('.' + userFilter).show();
+    }
+  };
 
-  // Checks for and displays any new user tweets
+  // Checks for and displays any new user tweets.  Display will be influenced by whether or not a filter has been set
   var displayTweets = function(){
     var displayedTweetCount = $('.tweet').length - 1;
     var index = streams.home.length - 1;
@@ -68,6 +72,7 @@ $(document).ready(function(){
       // Uses moment.js library to format timestamp
       // Does the new timestamp update? i.e. seconds ago -> minutes ago -> etc.
       var formattedTime = moment(tweet.created_at).fromNow();
+
       // Creates new tweet
       $("<div class='tweet " + tweet.user.slice(0) + "'><img src='./img/" + tweet.user + ".jpg'><a class='username' href='#'>@" +  tweet.user + "</a><span class='time'> &#183 " + formattedTime + "</span><br><span class='message'>" + tweet.message + "</span></div>").prependTo($('.feed'));
 
@@ -75,7 +80,9 @@ $(document).ready(function(){
     }
     // Reruns every 1000 miliseconds to search for new tweets
     setTimeout(function(){
-      displayTweets();
+      displayTweets()
+      // Checks if a filter has been set
+      checkFilter();
     }, 1000)
   }
   displayTweets();
