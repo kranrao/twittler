@@ -64,6 +64,9 @@ $(document).ready(function(){
       $('.back-btn').first().remove();
       $('.back-btn').fadeIn('slow');
     }
+
+    // Scroll user to top of the page
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
   });
 
   // If a filter has been set, filter for those tweets
@@ -94,7 +97,7 @@ $(document).ready(function(){
       var formattedTime = moment(tweet.created_at).fromNow();
 
       // Creates new tweet
-      $("<div class='tweet " + tweet.user.slice(0) + "'><img src='./img/" + tweet.user + ".jpg'><a class='username' href='#'>@" +  tweet.user + "</a><span class='time'> &#183 " + formattedTime + "</span><br><span class='message'>" + tweet.message + "</span></div>").prependTo($('.feed'));
+      $("<div class='tweet " + tweet.user.slice(0) + "'><img src='./img/" + tweet.user + ".jpg'><a class='username' href='#'>@" +  tweet.user + "</a><span class='time'> &#183 " + formattedTime + "</span><br><span class='message'>" + tweet.message + "</span></div>").prependTo($('.feed')).hide().fadeIn(1000);
 
       index -= 1;
     }
