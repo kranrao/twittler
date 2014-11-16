@@ -93,7 +93,6 @@ $(document).ready(function(){
       var tweet = streams.home[index];
 
       // Uses moment.js library to format timestamp
-      // Does the new timestamp update? i.e. seconds ago -> minutes ago -> etc.
       var formattedTime = moment(tweet.created_at).fromNow();
 
       // Creates new tweet
